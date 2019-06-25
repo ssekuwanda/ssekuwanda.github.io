@@ -18,6 +18,7 @@
     <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
     <!-- <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet"> -->
     <link href="/theme/css/local.css" rel="stylesheet" />
+    <link href="/theme/css/navbar.css" rel="stylesheet" />
     <link href="/theme/css/pygments.css" rel="stylesheet" />
     <link href="/theme/css/bootstrap.css" rel="stylesheet" />
     <link href="/theme/css/bootstrap-grid.css" rel="stylesheet" />
@@ -53,18 +54,25 @@ li.tag-4 {
 </style>
   </head>
   <body class="m-0 p-0">
-    <nav
-      class="navbar sticky-top navbar-light"
-      style="background-color: #e3f2fd;"
-    >
-      <a class="navbar-brand" href=""
-        >DOUG<br /><span>WANDAS</span>
-      </a>
-      <span class="pt-4">
-        <a href="" class="mr-2 text-dark">Blog</a>
-        <a href="#">About</a>
-      </span>
-    </nav>
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">
+          dougwandas
+        </div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="" target="_blank">Blog</a>
+      </div>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col">
