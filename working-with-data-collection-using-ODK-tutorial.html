@@ -65,7 +65,47 @@
 			<h6 class="badge badge-pill badge-primary"><h6 class="badge badge-pill badge-dark">Data</h6></h6>
 		</span>
 	</div>
-	<div itemprop="articleBody" class="article-body"></div>
+	<div itemprop="articleBody" class="article-body"><h2>Contents</h2>
+<blockquote>
+<p>Preparing your sheets<br>
+Survey sheet<br>
+Choices sheet<br>
+Settings sheet</p>
+</blockquote>
+<h2>For this module you will need:</h2>
+<ul>
+<li>Basic understanding of Excel</li>
+<li>A good understanding on how to design a survey questionnaire</li>
+<li>Building the data collection form or survey can be done using Microsoft Excel and XLSForm. XLSForm is an application developed by Nafundi used to create and validate forms for ODK (and it’s now open source!). This module will only focus on creating the form using Excel. It is ideal to create your survey forms in Excel so it is easy to make modifications even when offline, and you can save it in versions in case you want to replicate older versions for future use.</li>
+</ul>
+<h4>Preparing your sheets</h4>
+<p>To start off, create your file with the following sheets named accordingly.</p>
+<p>Survey – this sheet will include all the survey questions, type of questions, label and other instructions which ODK will interpret once the form has been uploaded.
+Settings – this sheet will determine how your sheet will be viewed in your mobile device.</p>
+<p>Choices – this sheet will include all the choices that will be used for single or multiple choice questions from your Survey sheet.
+<img alt="choices" src="/articles/images/img1.jpg"></p>
+<p>ODK lists down a few other sheets that you can use depending on the type of the form that you are trying to create. For purposes of this module, we can use the three sheets listed above.</p>
+<h4>The Survey sheet</h4>
+<p>On your Survey sheet, type in the following column headers:
+<img alt="Survey" src="/articles/images/img2.jpg"></p>
+<p>Type (required) – ODK recognizes a set of question types like single select (Yes or No questions), multi-select, text, numbers, and even photos and geographical locations. You can also use grouped or repeated questions. For Kobo Collect, there are basic types of questions (Source: Raso, 2013, ACF Madrid) which you can use for the survey. For a more technical ODK form, ODK lists down samples of data entry widgets you can use.
+Name (required) – this column will be the headers for the responses. The name should be related to your question. Names should be unique and must not have spaces. Your Names must only have letters, number and/or underscore e.g. pop1, no_persons, city.</p>
+<p>Label (required) – this is basically how your survey questions will appear on your mobile device. You can type this in whichever format e.g. What is your name?, Age, Date today. Try to copy the screenshot on your own sheet. <img alt="Survey" src="/articles/images/img3.jpg"></p>
+<p>Hint – as the name implies, this is where you can give your respondents a hint on how you want your question answered.</p>
+<p>Calculation – for questions requiring numerical answers, ODK gives you a chance to do calculations. ${name_of_calculated_field} is the expression used to perform a calculation. Under this column, you can request ODK to perform simple calculations for you. As an example, in the screenshot below, the name of your calculated field for the question “How many days in a week do you work?” is days_of_work. 7-$(days_of_work) is your calculation. This means that if your responder answers 6, Kobo Toolbox will perform the calculation 7.
+<img alt="Survey" src="/articles/images/img4.jpg"></p>
+<p>Appearance – this column determines how your question or groups of question will appear on your mobile device. Questions can be grouped together using the code field-list per group of questions.
+Constraint – this column is used to set restrictions for numerical questions. If you would like to have a minimum or maximum value of numerical answers, you can put in a constraint i.e. (.&gt;= 0 and .&lt;=1000) which means you can only answer values between 0 to 1000. If you go back to calculation example, you can put a constraint that answers can only be between 0-7 to make a logical calculation. Thus, your constraint can be typed as (.&gt;=0 and .&lt;=7). * Constraint_message – if you have a constraint, this column allows you to show an error message if the responder fails to follow the constraint.</p>
+<p>Required – just put in Yes across the question which you want to require the responder to answer. ####The CHOICES sheet Under the Choices sheet, you need to put the following column headers:
+<img alt="Survey" src="/articles/images/img5.jpg"></p>
+<p>List_name – this one serves the same purpose as your Type column in the survey sheet. This is your main reference in single-select or multiple-select questions in your survey sheet
+Name – this is similar to your Name column from the survey sheet. This must be unique and is related to your choices Labels. You can use letters, number and/or underscore for the choices names.</p>
+<p>Label – this shows how your choices will appear on your device. ####The SETTINGS sheet In the Settings sheet, you can have the following headers:
+<img alt="Survey" src="/articles/images/img6.jpg"></p>
+<p>form_title – this is how the name of your form will appear in your form list.
+form_id – ODK creates an ID for each of the forms that you create. Make sure that your form_id is unique.</p>
+<p>default_language – this determines what the default language will be used for the form. If you have translated your survey sheet into another language, you can create another default_language column with your second language preference. Your user will then be prompted to choose which language they want to use in answering the form.</p>
+<p>Once you are done with your survey form, make surge you save it in this format: name of file.xls. You can include underscores (_) if you want. Download: ODK Form Sample Once you are done with the Excel form, you can now proceed to the next module which is about uploading and testing the forms in Kobo Toolbox.</p></div>
 	<hr>
 	<!-- <h2>Comments</h2>
  -->
