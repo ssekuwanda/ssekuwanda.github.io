@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Using Open Data Kit(ODK) for data collection. — dougwandas</title>
+    <meta
+      name="description"
+      content="Title: Using Open Data Kit(ODK) for data collection.;
+Date: 2017-03-29; Author: ssekuwanda douglas"
+    />
+    <meta name="author" content="ssekuwanda douglas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="/theme/html5.js"></script>
+    <![endif]-->
+    <link href="/theme/css/ipython.css" rel="stylesheet" />
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="/theme/css/local.css" rel="stylesheet" />
+    <link href="/theme/css/navbar.css" rel="stylesheet" />
+    <link href="/theme/css/pygments.css" rel="stylesheet" />
+    <link href="/theme/css/bootstrap.css" rel="stylesheet" />
+    <link href="/theme/css/bootstrap-grid.css" rel="stylesheet" />
+    <link
+      href="/theme/css/bootstrap-grid.css.map"
+      rel="stylesheet"
+    />
+    <link href="/theme/css/bootstrap.css.map" rel="stylesheet" />
+  </head>
+  <body class="m-0 p-0">
+    <div class="nav mb-3">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">
+          dougwandas
+        </div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="" target="_blank">Blog</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="text-center">
+    <h1 itemprop="name headline" class="article-title mb-1">
+      Using Open Data Kit(ODK) for data collection.
+    </h1>
+    <time datetime="2017-03-29T00:00:00+03:00" itemprop="datePublished">29 March, 2017</time>
+  </div>
+  <div>
+    <span itemprop="keywords">
+      <h6 class="badge badge-pill badge-primary"><h6 class="badge badge-pill badge-warning">ODK</h6></h6>
+    </span>
+    <span itemprop="keywords">
+      <h6 class="badge badge-pill badge-primary"><h6 class="badge badge-pill badge-dark">Data</h6></h6>
+    </span>
+  </div>
+  <div itemprop="articleBody" class="article-body"><p>As usual lets get to work...</p>
+<h3>Todos</h3>
+<ul>
+<li>Design the form in excel</li>
+<li>Convert it to xml</li>
+<li>Upload and show the form on an android device</li>
+<li>Get the collected data from the device</li>
+</ul>
+<h3>Designing the form in excel</h3>
+<p>There are basically two ways to design forms in odk;</p>
+<blockquote>
+<ol>
+<li>Use an online tool <a href="http://opendatakit.org/">ODK Build</a></li>
+<li>Ms Excel</li>
+</ol>
+</blockquote>
+<p>In this tutorial, I'll explain the offline version using excel because <a href="http://opendatakit.org/">ODK Build</a> is quite easy but it comes with its challenges and I find Ms Excel a very fast build pattern and easy to debug.</p>
+<ul>
+<li>
+<p>Create an excel file with each column of row one containing (type,name,label,choice_filter,hint,constraint,constraint_message,required,appearance,relevant,read_only,calculation) as shown in the sample layout below.</p>
+</li>
+<li>
+<p>Add 3 sheets named (survey, choices and settings)<br>
+<strong>Example of a layout</strong><br>
+<img alt="excel_layout" src="/articles/images/xl_layout.png"></p>
+</li>
+</ul>
+<p><strong>type:-</strong> Explains the data format of an entry such as; integer, text, date, datetime, note, select_one(for choosing one field from the given choices/radio buttons). select_one and select_multiple(check boxes) take an additional value infront of them such as select_one yes_no. The yes_no is later set in the choices sheet as below.<br>
+<img alt="select_one" src="/articles/images/select_one.png"><br>
+<strong>name:-</strong> This is the variable name that will appear on the final collected data(Analysis variable name). It shouldn't have a space between the words, use underscores instead<br>
+<strong>label:-</strong> A question that will appear on the android device<br>
+<strong>choice_filter:-</strong><br>
+<strong>hint:-</strong> This gives more emphasis on the label or the question eg label-What's your age, hint-Age in years<br>
+<strong>constraint:-</strong> Lets say you only allow people with the an age of 16 and above. its written as</p>
+<blockquote>
+<p><code>.&gt;=${age}</code><br>
+ dot(.) represents this row's value, should be greater or equal to(&gt;=) the value in the row of age, \${age}</p>
+</blockquote>
+<p><strong>constraint_message:-</strong> The error message in case the constraint is true display this message<br>
+<strong>required:-</strong> Takes in two arguments, yes or no. But if nothing is filled it is defaulted to no, if yes the you have to fill in the field before filling the questions below.<br>
+<strong>default:-</strong> To place a default value in the input field say<br>
+<strong>calculation:-</strong> A field for all logical calculations, use \${name} convention to refer to a field. eg you gave a field called number_of_days which you want to convert into years</p>
+<blockquote>
+<p><code>${number_of_days}div 365</code></p>
+</blockquote>
+<p>The settings sheet takes two cols, the form_title and form_id. The form_title shows up from the odk collect(android app) form collection or menu.<br>
+Download the <a href="/docs/frame.xls">Frame</a><br>
+Download the <a href="/docs/example.xls">example</a> we are going to use later.</p>
+<h3>Convert the excel file to xml</h3>
+<p>xml is the format of data android devices can 'understand</p>
+<blockquote>
+<ol>
+<li>Once you have <a href="/docs/example.xls">downloaded</a> the sample excel,</li>
+<li>Open your web browser and go to open data kit <a href="http://opendatakit.org/xlsform/">website</a></li>
+<li>Select choose file and locate the downloaded excel file from the file manager</li>
+<li>Submit, in case you have errors in the excel workbook, they will be displayed in red or else,</li>
+<li>Select Download XForm, this downloads a file with a file extension of .xml</li>
+</ol>
+</blockquote>
+<h3>Upload and show the form on an android device</h3>
+<p>Download the ODK Collect app from google play store and install it. A complete install will create a folder on the device named odk which contains 3 subfolders; forms, instances, layers and metadata.<br>
+Copy the downloaded example.xml file from downloads and paste it in the forms subfolder, open the odk collect app and tap fill blank form select the form and fill in some sample data.</p>
+<h3>Get the collected data from the device</h3>
+<p>Every submission will create a subfolder inside the folder located in odk/instances</p>
+<p>Previous <a href="./how-i-built-this-blog.html">How i built this site</a></p></div>
+  <hr />
+  <!-- <h2>Comments</h2>
+ -->
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center center-block aw-bottom">
+          <p>&copy; ssekuwanda douglas 2019</p>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.collapseheader").click(function() {
+          $header = $(this)
+            .children("span")
+            .first();
+          $codearea = $(this).children(".input_area");
+          $codearea.slideToggle(500, function() {
+            $header.text(function() {
+              return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+            });
+          });
+        });
+      });
+    </script>
+   </body>
+</html>
