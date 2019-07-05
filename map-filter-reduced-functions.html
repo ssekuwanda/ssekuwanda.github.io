@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>How I Built This Website. — dougwandas</title>
+    <title>The Map Filter and Reduced Functions — dougwandas</title>
     <meta
       name="description"
-      content="Title: How I Built This Website.;
-Date: 2017-11-15; Author: ssekuwanda douglas"
+      content="Title: The Map Filter and Reduced Functions;
+Date: 2018-01-05; Author: ssekuwanda douglas"
     />
     <meta name="author" content="ssekuwanda douglas" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,10 +21,10 @@ Date: 2017-11-15; Author: ssekuwanda douglas"
       rel="stylesheet"
     />
     <link href="/theme/css/bootstrap.css.map" rel="stylesheet" />
-    <link rel="canonical" href="/how-i-built-this-blog.html" />
-     <meta name="description" content="This website uses two very common and easy to learn technologies, Python and Github. In python, pelican takes care of all the page styling while github is the deployment environment." />
+    <link rel="canonical" href="/map-filter-reduced-functions.html" />
+     <meta name="description" content="The three are in build functions that help in processing data stored in lists, this cut down the amount of code needed when processing operations that use lists." />
   </head>
-  <title>How I Built This Website.</title>
+  <title>The Map Filter and Reduced Functions</title>
   <body class="m-0 p-0">
     <div class="nav mb-3">
       <input type="checkbox" id="nav-check" />
@@ -51,19 +51,31 @@ Date: 2017-11-15; Author: ssekuwanda douglas"
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="text-center">
     <h1 class="article-title mb-1">
-      How I Built This Website.
+      The Map Filter and Reduced Functions
     </h1>
-    <time datetime="2017-11-15T00:00:00+03:00" itemprop="datePublished">15 November, 2017</time>
+    <time datetime="2018-01-05T00:00:00+03:00" itemprop="datePublished">05 January, 2018</time>
   </div>
   <div>
-    <span itemprop="keywords">
-      <h6 class="badge badge-pill badge-primary"><h6 class="badge badge-pill badge-info">github</h6></h6>
-    </span>
     <span itemprop="keywords">
       <h6 class="badge badge-pill badge-primary"><h6 class="badge badge-pill badge-danger">Python</h6></h6>
     </span>
   </div>
-  <div itemprop="articleBody" class="article-body"></div>
+  <div itemprop="articleBody" class="article-body"><h3>Map</h3>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="c1"># finding the area of a circle with radius, r</span>
+<span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># if one needs to find many circle areas with the radii below</span>
+<span class="n">radii</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1"># Without the map function</span>
+<span class="n">areas</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">radii</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">area</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div></div>
   <hr />
   <!-- <h2>Comments</h2>
  -->

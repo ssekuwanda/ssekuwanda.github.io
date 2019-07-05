@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>How I Built This Website. — dougwandas</title>
+    <title>Python Conditions — dougwandas</title>
     <meta
       name="description"
-      content="Title: How I Built This Website.;
-Date: 2017-11-15; Author: ssekuwanda douglas"
+      content="Title: Python Conditions;
+Date: 2018-02-27; Author: ssekuwanda douglas"
     />
     <meta name="author" content="ssekuwanda douglas" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,10 +21,10 @@ Date: 2017-11-15; Author: ssekuwanda douglas"
       rel="stylesheet"
     />
     <link href="/theme/css/bootstrap.css.map" rel="stylesheet" />
-    <link rel="canonical" href="/how-i-built-this-blog.html" />
-     <meta name="description" content="This website uses two very common and easy to learn technologies, Python and Github. In python, pelican takes care of all the page styling while github is the deployment environment." />
+    <link rel="canonical" href="/python-conditions.html" />
+     <meta name="description" content="Conditions help us to implement an event in case one creteria is met of fails to be be successfull." />
   </head>
-  <title>How I Built This Website.</title>
+  <title>Python Conditions</title>
   <body class="m-0 p-0">
     <div class="nav mb-3">
       <input type="checkbox" id="nav-check" />
@@ -51,19 +51,59 @@ Date: 2017-11-15; Author: ssekuwanda douglas"
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="text-center">
     <h1 class="article-title mb-1">
-      How I Built This Website.
+      Python Conditions
     </h1>
-    <time datetime="2017-11-15T00:00:00+03:00" itemprop="datePublished">15 November, 2017</time>
+    <time datetime="2018-02-27T00:00:00+03:00" itemprop="datePublished">27 February, 2018</time>
   </div>
   <div>
-    <span itemprop="keywords">
-      <h6 class="badge badge-pill badge-primary"><h6 class="badge badge-pill badge-info">github</h6></h6>
-    </span>
     <span itemprop="keywords">
       <h6 class="badge badge-pill badge-primary"><h6 class="badge badge-pill badge-danger">Python</h6></h6>
     </span>
   </div>
-  <div itemprop="articleBody" class="article-body"></div>
+  <div itemprop="articleBody" class="article-body"><h3>Conditions</h3>
+<p>Conditions are statements that result in a true or false value. In other words they return to us a boolean data type. We can use conditions to compare items and make decisions based on certain comparisons. We can use comparison operators to make conditions.</p>
+<h2>Comparison Operators</h2>
+<p>There are six main comparison operators in python. They are the following:</p>
+<div class="highlight"><pre><span></span>&lt;   # less than
+&lt;=  # less than or equal to
+&gt;   # greater than
+&gt;=  # greater than or equal to
+==  # equal to
+!=  # not equal to
+</pre></div>
+
+
+<p>These operators can be used to compare numbers (integers and floats) or to compare strings. However if you are comparing number and strings you can only use the == and != operator.</p>
+<div class="highlight"><pre><span></span>x = 5
+y = 9
+
+x &gt; y     # this is False
+y == x    # this is False
+x &lt; y-1   # this is True
+x+1 != y  # this is True
+2.0 &gt; 5   # this is False
+
+&quot;hello&quot; == &quot;hello&quot;  # this is True
+&quot;tim&quot; == &quot;Tim&quot;      # this is False
+&quot;a&quot; &gt; &quot;b&quot;           # this is False
+&quot;apple&quot; &lt; &quot;tim&quot;     # this is True
+
+
+&quot;5&quot; == 5 # this will return False
+
+# NOT ALLOWED
+2 &gt; &quot;hello&quot;
+3.0 &lt; &quot;tim&quot;
+# These result in errors
+</pre></div>
+
+
+<p>We can also declare variables to hold the values of conditions.</p>
+<div class="highlight"><pre><span></span>check = &quot;tim&quot; == &quot;joe&quot;
+larger = 1 &gt; 5
+bothSame = larger == check  # This will be comparing two boolean values together
+# if they are both the same we will get a True value
+</pre></div></div>
   <hr />
   <!-- <h2>Comments</h2>
  -->

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Python Tutorial For Beginners — dougwandas</title>
+    <meta
+      name="description"
+      content="Title: Python Tutorial For Beginners;
+Date: 2018-01-13; Author: ssekuwanda douglas"
+    />
+    <meta name="author" content="ssekuwanda douglas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/theme/css/ipython.css" rel="stylesheet" />
+    <link href="/theme/css/local.css" rel="stylesheet" />
+    <link href="/theme/css/navbar.css" rel="stylesheet" />
+    <link href="/theme/css/pygments.css" rel="stylesheet" />
+    <link href="/theme/css/bootstrap.css" rel="stylesheet" />
+    <link href="/theme/css/bootstrap-grid.css" rel="stylesheet" />
+    <link
+      href="/theme/css/bootstrap-grid.css.map"
+      rel="stylesheet"
+    />
+    <link href="/theme/css/bootstrap.css.map" rel="stylesheet" />
+    <link rel="canonical" href="/python-tutorial-for-beginners.html" />
+     <meta name="description" content="Python is one of the most highly used programming language in the recent times due to it's simple syntax and ease to read. But starting to learn any programming language can be challenging. In this and other tutorials that follow we shall dive in to the world of python programming." />
+  </head>
+  <title>Python Tutorial For Beginners</title>
+  <body class="m-0 p-0">
+    <div class="nav mb-3">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">
+          dougwandas
+        </div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="" target="_blank">Blog</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="text-center">
+    <h1 class="article-title mb-1">
+      Python Tutorial For Beginners
+    </h1>
+    <time datetime="2018-01-13T00:00:00+03:00" itemprop="datePublished">13 January, 2018</time>
+  </div>
+  <div>
+    <span itemprop="keywords">
+      <h6 class="badge badge-pill badge-primary"><h6 class="badge badge-pill badge-danger">Python</h6></h6>
+    </span>
+  </div>
+  <div itemprop="articleBody" class="article-body"><h3>Introduction To Python</h3>
+<p>Python(Py) was created by Guido Van Rossum in the late 1980s. Since than it has stood the test of time but unlike other programming languages that fade away, python has only became better. Two main versions of python exist as of 2018, python 2.x and python 3.x. Py 2.0 will retire in 2020 with 2.7 as its longest supported version.</p>
+<p>Python is a beginner friendly programming language due to its being ease to read and write.</p>
+<p><strong>Uses</strong></p>
+<blockquote>
+<p>Web development<br>
+Games<br>
+Data analysis<br>
+Machine learning
+Graphic user interfaces(GUIs)<br>
+Robotics etc</p>
+</blockquote>
+<h3>Getting started</h3>
+<p>Download and install python from the offical <a href="http://www.python.org/">website</a> if you are on a windows machine for mac and linux users it is installed by default. To write code we shall use a text editor, good enough the python install comes packed with a beginner friendly editor. Search for IDLE and open it.</p>
+<p>Once we've done that we need to click File &gt; New File from the top menu bar. This should open up what looks like a blank file.<br>
+<img alt="python_new_file" src="/articles/images/pythonfile.png"><br>
+Once we've done this I recommend saving your file by hitting CTRL + S or by clicking File &gt; Save As.
+And now we are ready to start coding.</p>
+<h3>Data Types</h3>
+<p>A "Data Type" is simply a classification of information. The data type of an object dictates the different things that we can do to it and use it for.</p>
+<p>In Python there are many different data types but the ones we are going to talk about now are the following:</p>
+<p><strong>Integer</strong>: In python integers are represented by the keyword "int". Int's are any whole number (negative or positive).</p>
+<p><strong>Float:</strong> In python floats are represented by the keyword "float". Floats's are any decimal number (negative or positive).</p>
+<p><strong>String:</strong> In python strings are represented by the keyword "str". Str's are any anything surrounded by double quotes ("im a string") or single quotes ('i am also a string').</p>
+<p><strong>Boolean:</strong> In python boolean's are represented by the keyword "bool". Bools are either True or False (Capitals Matter!).</p>
+<div class="highlight"><pre><span></span><span class="n">int</span><span class="o">:</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="o">-</span><span class="mi">3</span><span class="o">,</span> <span class="mi">0</span>
+<span class="n">float</span><span class="o">:</span> <span class="mf">1.0</span><span class="o">,</span> <span class="mf">0.9</span><span class="o">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="o">,</span> <span class="mf">5.6</span><span class="o">,</span> <span class="mf">8.0</span>
+<span class="n">str</span><span class="o">:</span> <span class="s2">&quot;hello&quot;</span><span class="o">,</span> <span class="s2">&quot;0.2&quot;</span><span class="o">,</span> <span class="s1">&#39;-98&#39;</span><span class="o">,</span> <span class="s1">&#39;True&#39;</span>
+<span class="n">bool</span><span class="o">:</span> <span class="n">True</span><span class="o">,</span> <span class="n">False</span>
+</pre></div>
+
+
+<h2>Creating Variables</h2>
+<p>A variable is something that we use to hold a value. We can create are own variables that hold and store values by typing a variable name and then setting it equal to a certain data type (see below). A valid variable name is anything that does not start with a number and contains only letters and underscores (NO SPACES). Capitals in variable names are allowed but do make a difference: the variable tim is NOT the same variable as Doug.</p>
+<div class="highlight"><pre><span></span>greeting = &quot;Hello&quot;
+myVariable = True
+</pre></div>
+
+
+<h2>Printing to the screen</h2>
+<p>To display something to the shell in python we can use the keyword "print":</p>
+<div class="highlight"><pre><span></span>var = &quot;hello&quot;
+print(&quot;hi&quot;)
+print(var)  # This will print &quot;hello&quot;
+</pre></div>
+
+
+<p><strong>Note:</strong> To run your program and see the output click the F5 key or from the menu bar: Run &gt; Run Module.</p>
+<p><a href="./basic-operators-and-input.html"><button class="btn btn-primary btn-sm" role="button">Basic Operators &amp; Input</button></a></p></div>
+  <hr />
+  <!-- <h2>Comments</h2>
+ -->
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center center-block aw-bottom">
+          <p>&copy; ssekuwanda douglas 2019</p>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.collapseheader").click(function() {
+          $header = $(this)
+            .children("span")
+            .first();
+          $codearea = $(this).children(".input_area");
+          $codearea.slideToggle(500, function() {
+            $header.text(function() {
+              return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+            });
+          });
+        });
+      });
+    </script>
+   </body>
+</html>

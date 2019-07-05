@@ -1,0 +1,4 @@
+<h6 class="badge badge-pill badge-warning">ODK</h6>
+<h6 class="badge badge-pill badge-dark">Data</h6>
+<h6 class="badge badge-pill badge-info">github</h6>
+<h6 class="badge badge-pill badge-danger">Python</h6>
